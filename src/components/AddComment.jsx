@@ -1,15 +1,20 @@
+// importo i strumenti di React
 import React from "react";
+
+// Importo react-bootstrap con tutti i suoi componenti
 import { Col, Container } from "react-bootstrap";
 import Card from "react-bootstrap/Card";
 import Form from "react-bootstrap/Form";
 import Row from "react-bootstrap/Row";
 import Button from "react-bootstrap/Button";
+
+// Importo gli Hook di React
 import { useState } from "react";
 
-const POST_URL = "https://striveschool-api.herokuapp.com/api/comments/";
+// Importo il Token da utils
+import { API_TOKEN } from "../utils/ApiToken";
 
-const API_TOKEN =
-  "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NzFjYmUzOWJiZDU2YTAwMTVlZjRjZTciLCJpYXQiOjE3MzE5NjQ1MzgsImV4cCI6MTczMzE3NDEzOH0.tNVGo6PGSMXl75tWIkFOEQJOlFyMpXmgdwjq9AGO62w";
+const POST_URL = "https://striveschool-api.herokuapp.com/api/comments/";
 
 export default function AddComment({ asin, getComments }) {
   const [comment, setComment] = useState("");

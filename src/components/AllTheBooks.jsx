@@ -1,4 +1,3 @@
-import CommentList from "./CommentList";
 import SingleBook from "./SingleBook";
 import { Col, Container, Row } from "react-bootstrap";
 
@@ -14,9 +13,7 @@ export default function AllTheBooks({ bookList, theme }) {
           </Row>
         </Col>
 
-        <Col sm={3}>
-        Commenti
-        </Col>
+        <Col sm={3}>Commenti</Col>
       </Row>
     </Container>
   );

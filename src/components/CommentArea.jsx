@@ -1,13 +1,16 @@
+// Importo i componenti di React
 import React from "react";
+
+// Importo gli Hooks utilizzati
 import { useState, useEffect } from "react";
+
+// 
 import AddComment from "./AddComment";
 import CommentList from "./CommentList";
+import { API_TOKEN } from "../utils/ApiToken";
 
 const GET_URL =
   "https://striveschool-api.herokuapp.com/api/books/:asin/comments/";
-
-const API_TOKEN =
-  "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NzFjYmUzOWJiZDU2YTAwMTVlZjRjZTciLCJpYXQiOjE3MzE5NjQ1MzgsImV4cCI6MTczMzE3NDEzOH0.tNVGo6PGSMXl75tWIkFOEQJOlFyMpXmgdwjq9AGO62w";
 
 export default function CommentArea({ asin }) {
   const [commentList, setCommentList] = useState([]);
