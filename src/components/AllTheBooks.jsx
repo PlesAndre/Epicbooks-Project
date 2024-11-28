@@ -1,19 +1,16 @@
+// Importo il componente
 import SingleBook from "./SingleBook";
-import { Col, Container, Row } from "react-bootstrap";
 
-export default function AllTheBooks({ bookList, theme }) {
+// Importo react-bootstrap
+import { Container, Row } from "react-bootstrap";
+
+export default function AllTheBooks({ category, theme }) {
   return (
     <Container data-bs-theme={theme}>
-      <Row className="mt-5">
-        <Col sm={9}>
-          <Row className="g-4">
-            {bookList.map((book, index) => (
-              <SingleBook key={`${book.title}-${index}`} {...book} />
-            ))}
-          </Row>
-        </Col>
-
-        <Col sm={3}>Commenti</Col>
+      <Row className="mt-5 g-4" sm={12} md={2} lg={3} xl={4}>
+        {category.map((book, index) => (
+          <SingleBook key={`${book.title}-${index}`} {...book} />
+        ))}
       </Row>
     </Container>
   );

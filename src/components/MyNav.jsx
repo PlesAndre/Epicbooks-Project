@@ -1,17 +1,28 @@
+// Importo React e i suoi componenti
 import React, { useState, useContext } from "react";
+
+// Importo react-bootstrap
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
+import { NavDropdown } from "react-bootstrap";
 import { ButtonGroup, Form, ToggleButton } from "react-bootstrap";
+
+// Importo il useContext per il tema chiaro/scuro
 import { themeContext } from "../contexts/context";
 
-export default function MyNav({ setBookList, bookData, toggleTheme }) {
+export default function MyNav({
+  setCategory,
+  category,
+  toggleTheme,
+  toggleCategory,
+}) {
   function handleChange(event) {
     const searchBook = event.target.value.toLowerCase();
-    const filteredResults = bookData.filter((book) =>
+    const filteredResults = category.filter((book) =>
       book.title.toLowerCase().includes(searchBook)
     );
-    setBookList(filteredResults);
+    setCategory(filteredResults);
   }
 
   const [checked, setChecked] = useState(false);
@@ -26,7 +37,17 @@ export default function MyNav({ setBookList, bookData, toggleTheme }) {
           <Nav className="me-auto">
             <Nav.Link href="#">Home</Nav.Link>
             <Nav.Link href="#">About</Nav.Link>
-            <Nav.Link href="#">Browse</Nav.Link>
+            <NavDropdown
+              title="Categories"
+              id="nav-dropdown"
+              onSelect={toggleCategory}
+            >
+              <NavDropdown.Item eventKey="fantasy">Fantasy</NavDropdown.Item>
+              <NavDropdown.Item eventKey="history">History</NavDropdown.Item>
+              <NavDropdown.Item eventKey="horror">Horror</NavDropdown.Item>
+              <NavDropdown.Item eventKey="romance">Romance</NavDropdown.Item>
+              <NavDropdown.Item eventKey="StartCategory">Scifi</NavDropdown.Item>
+            </NavDropdown>
 
             <ButtonGroup className="ms-3">
               <ToggleButton
@@ -40,7 +61,7 @@ export default function MyNav({ setBookList, bookData, toggleTheme }) {
                   setChecked(e.currentTarget.checked);
                 }}
               >
-                {checked ? "Light" : "Dark"}
+                {checked ? "🌚" : "🌞"}
               </ToggleButton>
             </ButtonGroup>
           </Nav>

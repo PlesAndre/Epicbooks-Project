@@ -1,4 +1,7 @@
+// Importo React e i suoi componenti 
 import React from "react";
+
+// Importo il componente utilizzato
 import { Card } from "react-bootstrap";
 
 export default function CommentList(props) {

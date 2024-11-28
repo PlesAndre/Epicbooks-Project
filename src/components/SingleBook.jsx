@@ -1,42 +1,24 @@
-import React, { useState } from "react";
-import { Card, Col, Container, Row } from "react-bootstrap";
-import CommentArea from "./CommentArea";
+// Importo React e i suoi componenti
+import React from "react";
 
-export default function SingleBook({ img, title, price, asin }) {
-  // La card genera un bordo rosso quando clicco su di essa
-  const [select, setSelected] = useState(false);
+// Importo react-bootstrap
+import { Button, Card, Col, Container, Row } from "react-bootstrap";
 
-  function toggleSelect() {
-    setSelected((setBorder) => !setBorder);
-  }
+// Importo il componente utilizzato
 
+export default function SingleBook({ img, title, price }) {
   return (
-    <Col sm={select ? 10 : 4}>
-      <Container className="d-flex">
+    <Col sm={3}>
+      <Container>
         <Row>
           <Col>
-            <Card
-              onClick={toggleSelect}
-              style={{ border: select ? "2px solid red" : "", height: "33em" }}
-            >
+            <Card>
               <Card.Img className="card-img" variant="top" src={img} />
-              <Card.Body>
+              <Card.Body className="d-flex align-items-center">
                 <Card.Title className="fs-6">{title}</Card.Title>
-                <Card.Text className="text-center">
-                  <strong>Price:</strong> {price}
-                </Card.Text>
+                <Button className="f-5">Details</Button>
               </Card.Body>
             </Card>
-          </Col>
-
-          <Col
-            className={`${
-              select ? "ms-2 border border-1 rounded recensioni " : "d-none"
-            }`}
-            sm={select ? 8 : 2}
-          >
-            <h2 className="fs-4 mt-2">Recensioni</h2>
-            {select && <CommentArea asin={asin}/>}
           </Col>
         </Row>
       </Container>

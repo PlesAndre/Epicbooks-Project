@@ -1,13 +1,15 @@
 // Importo i componenti di React
 import React from "react";
 
-// Importo gli Hooks utilizzati
+// Importo gli hooks utilizzati
 import { useState, useEffect } from "react";
 
-// 
+// Importo i componenti utilizzati
 import AddComment from "./AddComment";
 import CommentList from "./CommentList";
-import { API_TOKEN } from "../utils/ApiToken";
+
+// Importo il Token per l'API
+import API_TOKEN from "../utils/ApiToken";
 
 const GET_URL =
   "https://striveschool-api.herokuapp.com/api/books/:asin/comments/";

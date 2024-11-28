@@ -1,14 +1,14 @@
 // importo i strumenti di React
 import React from "react";
 
-// Importo react-bootstrap con tutti i suoi componenti
+// Importo react-bootstrap 
 import { Col, Container } from "react-bootstrap";
 import Card from "react-bootstrap/Card";
 import Form from "react-bootstrap/Form";
 import Row from "react-bootstrap/Row";
 import Button from "react-bootstrap/Button";
 
-// Importo gli Hook di React
+// Importo gli hooks di React
 import { useState } from "react";
 
 // Importo il Token da utils

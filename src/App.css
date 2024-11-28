@@ -37,16 +37,32 @@
   }
 }
 
+/* Stile di ogni card */
+.card {
+  width: 270px;
+}
+
 .card-img {
   height: 400px;
   object-fit: fill;
+  position: relative;
 }
 
+.card-body {
+  height: 120px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Stile contenitore recensioni */
 .recensioni {
   max-height: 530px;
   overflow-y: scroll;
 }
 
+/* Tema scuro */
 .dark {
   background-color: #282c34;
   color: white;
