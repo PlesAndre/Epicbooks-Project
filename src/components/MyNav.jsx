@@ -46,7 +46,9 @@ export default function MyNav({
               <NavDropdown.Item eventKey="history">History</NavDropdown.Item>
               <NavDropdown.Item eventKey="horror">Horror</NavDropdown.Item>
               <NavDropdown.Item eventKey="romance">Romance</NavDropdown.Item>
-              <NavDropdown.Item eventKey="StartCategory">Scifi</NavDropdown.Item>
+              <NavDropdown.Item eventKey="StartCategory">
+                Scifi
+              </NavDropdown.Item>
             </NavDropdown>
 
             <ButtonGroup className="ms-3">
