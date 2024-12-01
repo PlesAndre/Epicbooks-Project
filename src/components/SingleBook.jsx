@@ -6,7 +6,7 @@ import { Button, Card, Col, Container, Row } from "react-bootstrap";
 
 // Importo il componente utilizzato
 
-export default function SingleBook({ img, title, price }) {
+export default function SingleBook({ img, title}) {
   return (
     <Col sm={3}>
       <Container>

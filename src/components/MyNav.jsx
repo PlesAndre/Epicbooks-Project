@@ -1,5 +1,5 @@
-// Importo React e i suoi componenti
-import React, { useState, useContext } from "react";
+// Importo React e i suoi hooks
+import React, { useState, useContext, useEffect } from "react";
 
 // Importo react-bootstrap
 import Container from "react-bootstrap/Container";
@@ -11,22 +11,32 @@ import { ButtonGroup, Form, ToggleButton } from "react-bootstrap";
 // Importo il useContext per il tema chiaro/scuro
 import { themeContext } from "../contexts/context";
 
+// Importo gli oggetti di React-Router
+import { Link } from "react-router-dom";
+
 export default function MyNav({
-  setCategory,
   category,
   toggleTheme,
   toggleCategory,
+  setFilteredResults,
 }) {
-  function handleChange(event) {
-    const searchBook = event.target.value.toLowerCase();
-    const filteredResults = category.filter((book) =>
-      book.title.toLowerCase().includes(searchBook)
-    );
-    setCategory(filteredResults);
-  }
-
   const [checked, setChecked] = useState(false);
+
   const theme = useContext(themeContext);
+
+  const [searchBook, setSearchBook] = useState("");
+
+  useEffect(() => {
+    if (searchBook === "") {
+      setFilteredResults(category);
+    } else {
+      const filteredBooks = category.filter((book) =>
+        book.title.toLowerCase().includes(searchBook.toLowerCase())
+      );
+
+      setFilteredResults(filteredBooks);
+    }
+  }, [searchBook, category]);
 
   return (
     <Navbar expand="lg" className="bg-body-tertiary" data-bs-theme={theme}>
@@ -35,8 +45,8 @@ export default function MyNav({
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link href="#">Home</Nav.Link>
-            <Nav.Link href="#">About</Nav.Link>
+            <Nav.Link as={Link} to="/">Home</Nav.Link>
+            <Nav.Link>About</Nav.Link>
             <NavDropdown
               title="Categories"
               id="nav-dropdown"
@@ -67,7 +77,11 @@ export default function MyNav({
               </ToggleButton>
             </ButtonGroup>
           </Nav>
-          <Form className="w-25 text-center" onChange={(e) => handleChange(e)}>
+          <Form
+            className="w-25 text-center"
+            value={searchBook}
+            onChange={(e) => setSearchBook(e.target.value)}
+          >
             <Form.Group className="my-2" controlId="formBasicEmail">
               <Form.Control type="text" placeholder="Cerca il tuo libro..." />
             </Form.Group>
