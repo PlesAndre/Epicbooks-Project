@@ -1,11 +1,14 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Card, Col, Container, Row } from "react-bootstrap";
 import { useLocation, useParams } from "react-router-dom";
 import CommentArea from "../CommentArea";
+import { themeContext } from "../../contexts/context";
 
 export default function BookDetails() {
-  const { asin } = useParams(); // Recupera asin dalla URL
+  const { asin } = useParams();
   const location = useLocation();
+
+  const theme = useContext(themeContext);
 
   // Recupera i dati passati tramite Link o mostra un messaggio se non disponibili
   const { img, title, price } = location.state || {};
@@ -54,7 +57,7 @@ export default function BookDetails() {
 
       <Row className="mt-3 w-100 d-flex justify-content-center">
         <Col sm={12}>
-          <div className="comment-area-container">
+          <div className="comment-area-container" data-bs-theme={theme}>
             <CommentArea asin={asin} className="comment-area-container" />
           </div>
         </Col>
