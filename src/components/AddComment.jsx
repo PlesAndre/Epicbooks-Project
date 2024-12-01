@@ -1,7 +1,7 @@
 // importo i strumenti di React
 import React from "react";
 
-// Importo react-bootstrap 
+// Importo react-bootstrap
 import { Col, Container } from "react-bootstrap";
 import Card from "react-bootstrap/Card";
 import Form from "react-bootstrap/Form";
@@ -12,7 +12,7 @@ import Button from "react-bootstrap/Button";
 import { useState } from "react";
 
 // Importo il Token da utils
-import { API_TOKEN } from "../utils/ApiToken";
+import API_TOKEN from "../utils/ApiToken";
 
 const POST_URL = "https://striveschool-api.herokuapp.com/api/comments/";
 
@@ -56,7 +56,7 @@ export default function AddComment({ asin, getComments }) {
   }
 
   return (
-    <Card className="mb-3">
+    <Card className="mb-3 w-50">
       <Card.Header>Aggiungi un commento</Card.Header>
       <Form onSubmit={handleSubmit}>
         <Container>
@@ -70,7 +70,7 @@ export default function AddComment({ asin, getComments }) {
               />
             </Col>
 
-            <Col sm={8} className="mt-2">
+            <Col sm={12} className="mt-2">
               <Form.Control
                 type="text"
                 placeholder="Valutazione (1-5)"
@@ -78,7 +78,8 @@ export default function AddComment({ asin, getComments }) {
                 onChange={(e) => setRating(e.target.value)}
               />
             </Col>
-
+          </Row>
+          <Row>
             <Col className="my-2 text-center">
               <Button type="submit">Aggiungi commento</Button>
             </Col>

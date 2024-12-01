@@ -37,11 +37,13 @@ export default function CommentArea({ asin }) {
   }
 
   useEffect(() => {
-    getComments();
-  }, []);
+    if (asin) {
+      getComments();
+    }
+  }, [asin]);
 
   return (
-    <div>
+    <div className="d-flex flex-column align-items-center">
       <AddComment asin={asin} getComments={getComments} />
       {commentList.map((comment, index) => (
         <CommentList comment={comment} key={comment._id + index} />

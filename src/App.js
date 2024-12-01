@@ -10,8 +10,10 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 // Importo i componenti necessari per l'utilizzo
 import MyNav from "./components/MyNav";
-import Homepage from "./components/Homepage.jsx";
 import MyFooter from "./components/MyFooter";
+import Homepage from "./components/navLinks/Homepage.jsx";
+import NotFound from "./components/navLinks/NotFound.jsx";
+import BookDetails from "./components/navLinks/BookDetails.jsx";
 
 // Importo i file JSON
 import StartCategory from "./dataBooks/scifi.json";
@@ -21,7 +23,7 @@ import romance from "./dataBooks/romance.json";
 import horror from "./dataBooks/horror.json";
 
 // Importo il Context per il tema chiaro/scuro
-import { themeContext, booksContext } from "./contexts/context.jsx";
+import { themeContext } from "./contexts/context.jsx";
 
 function App() {
   // Hook che contiente lo stato iniziale del dataBooks e che gli passa ogni JSON al click tramite setCategory()
@@ -36,6 +38,7 @@ function App() {
   // theme contiene il valore iniziale "light" poi cambiato in base al true/false dato da setTheme
   const [theme, setTheme] = useState("dark");
 
+  // Funzione che passa al theme il valore dark o light
   function toggleTheme() {
     setTheme(theme === "dark" ? "light" : "dark");
   }
@@ -50,7 +53,7 @@ function App() {
       StartCategory,
     };
 
-    // Gli passo l'oggetto(categories) nel parametro ma chiamando gli elementi dinamicamente
+    // Gli passo l'oggetto(categories) nel parametro ma chiamando gli elementi all'interno dinamicamente
     setCategory(categories[eventKey]);
     setCategoryKey(eventKey);
   }
@@ -86,7 +89,8 @@ function App() {
                   />
                 }
               />
-              {/* <Route path="/" element={<BookDetails />} /> */}
+              <Route path="/book/:asin" element={<BookDetails />} />
+              <Route path="*" element={<NotFound />} />
             </Routes>
           </Container>
           <MyFooter />
@@ -97,14 +101,6 @@ function App() {
 }
 
 export default App;
-
-// Creare funzionalità per le categorie
-// - ogni volta che clicco una categoria mi renderizza quella selezionata✅
-// - gli devo passare su app.jsx tutti gli import dei json e tramite funzione passargli un parametro che prende l'evento e mi sostituisce sul filtered la categoria✅
-// BUG
-// - la barra di ricerca funziona per metà, quando cerco un libro me lo da, ma quando cancello le parole non ritorna la lista di libri iniziale ✅
-// SOLUTION
-// - usare useEffect per potergli aggiornare la category, cosi ogni volta che cambia il target.value ritorna lo stato iniziale?
 
 // Aggiungere BookDetails
 // - Basandomi sul disegno che ho fatto
