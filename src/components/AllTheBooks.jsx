@@ -9,7 +9,11 @@ export default function AllTheBooks({ filteredResults, theme }) {
     <Container data-bs-theme={theme}>
       <Row className="mt-5 g-4" sm={12} md={2} lg={3} xl={4}>
         {filteredResults.map((book, index) => (
-          <SingleBook key={`${book.title}-${index}`} {...book} asin={book.asin}/>
+          <SingleBook
+            key={`${book.title}-${index}`}
+            {...book}
+            asin={book.asin}
+          />
         ))}
       </Row>
     </Container>

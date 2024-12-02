@@ -1,5 +1,9 @@
 import React from "react";
+
+// Importo i metodi di react-router-dom
 import { Link } from "react-router-dom";
+
+// Importo gli elementi di react-bootstrap
 import { Button, Card, Col, Container, Row } from "react-bootstrap";
 
 export default function SingleBook({ img, title, asin, price }) {

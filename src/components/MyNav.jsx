@@ -48,7 +48,9 @@ export default function MyNav({
             <Nav.Link as={Link} to="/">
               Home
             </Nav.Link>
-            <Nav.Link as={Link} to="*">About</Nav.Link>
+            <Nav.Link as={Link} to="*">
+              About
+            </Nav.Link>
             <NavDropdown
               title="Categories"
               id="nav-dropdown"
@@ -85,7 +87,7 @@ export default function MyNav({
             onChange={(e) => setSearchBook(e.target.value)}
           >
             <Form.Group className="my-2" controlId="formBasicEmail">
-              <Form.Control type="text" placeholder="Cerca il tuo libro..." />
+              <Form.Control type="text" placeholder="Find your book..." />
             </Form.Group>
           </Form>
         </Navbar.Collapse>

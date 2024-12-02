@@ -1,6 +1,13 @@
+// Importo gli hook di react
 import React, { useContext } from "react";
+
+// Importo gli elementi di react-bootstrap
 import { Card, Col, Container, Row } from "react-bootstrap";
+
+// Importo i metodi dei react-router-dom
 import { useLocation, useParams } from "react-router-dom";
+
+// Importo i componenti utilizzati
 import CommentArea from "../CommentArea";
 import { themeContext } from "../../contexts/context";
 
@@ -8,6 +15,7 @@ export default function BookDetails() {
   const { asin } = useParams();
   const location = useLocation();
 
+  // Recupera il useContext per il "theme"
   const theme = useContext(themeContext);
 
   // Recupera i dati passati tramite Link o mostra un messaggio se non disponibili
@@ -37,7 +45,7 @@ export default function BookDetails() {
             </Col>
 
             <Col sm={12} className="mt-4">
-              <h5>Descrizione</h5>
+              <h5>Description</h5>
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim
                 augue, maximus ut sollicitudin vel, dictum ut urna. Aenean
