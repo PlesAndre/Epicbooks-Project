@@ -48,7 +48,7 @@ export default function MyNav({
             <Nav.Link as={Link} to="/">
               Home
             </Nav.Link>
-            <Nav.Link>About</Nav.Link>
+            <Nav.Link as={Link} to="*">About</Nav.Link>
             <NavDropdown
               title="Categories"
               id="nav-dropdown"

@@ -8,13 +8,11 @@ export default function NotFound() {
     <Container className="vh-100 d-flex justify-content-center align-items-center">
       <Alert className="w-50" variant="danger">
         <Alert.Heading>
-          <strong>404.</strong> Questo è un errore
+          <strong>404.</strong> This is an error
         </Alert.Heading>
-        <p>La seguente richiesta non è stata trovata nel server</p>
+        <p>The following request was not found in the server</p>
         <hr />
-        <p className="mb-0">
-          La preghiamo di riprovare o contattare l'assistenza clienti
-        </p>
+        <p className="mb-0">Please try again or contact customer service</p>
       </Alert>
     </Container>
   );
