@@ -1,70 +1,34 @@
-# Getting Started with Create React App
+# EpicBooks Project
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Descrizione
+Il EpicBooks Project è il primo progetto implementato utilizzando Create React App, che segna l'inizio dell'approccio a React. Il sito è una libreria online dove gli utenti possono cercare e visualizzare libri di vario genere. La homepage consente di cambiare la categoria dei libri (ad esempio, romanzi, fantascienza, biografie, ecc.) per filtrare i risultati. I dati dei libri vengono recuperati da file JSON appositamente creati per ciascuna categoria. Il progetto sfrutta appieno il CRUD (Create, Read, Update, Delete), permettendo agli utenti di aggiungere, visualizzare, aggiornare e rimuovere libri.
 
-## Available Scripts
+L'approccio iniziale è stato complesso in quanto si è trattato di utilizzare una libreria React vera e propria per la prima volta, comprendendo come funziona, implementando le sue funzionalità e gestendo lo stato dell'applicazione.
 
-In the project directory, you can run:
+## Tecnologie utilizzate
+- React (con Create React App)
+- JavaScript (per la logica applicativa)
+- CSS (per lo stile e il layout)
+- File JSON (per i dati dei libri)
+- CRUD (per la gestione dei dati)
 
-### `npm start`
+## Installazione e utilizzo
+Clona il repository:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+git clone https://github.com/tuo-username/epicbooks.git
+Vai nella cartella del progetto:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Installa le dipendenze:
+- npm install
+ 
+Avvia l'applicazione:
+- npm start
 
-### `npm test`
+Puoi iniziare a esplorare le varie categorie di libri e utilizzare le funzionalità di ricerca.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Funzionalità implementate
+- Visualizzazione dei libri: visualizzazione dei libri disponibili in base alla categoria selezionata dalla homepage.
+- Cambio di categoria: possibilità di cambiare categoria (ad esempio, romanzi, fantascienza, biografie) per filtrare i libri visualizzati.
+- Gestione CRUD dei libri: funzionalità che consente di aggiungere, visualizzare, aggiornare e rimuovere libri tramite l'interfaccia.
+- Utilizzo di JSON per i dati: i libri e le categorie vengono recuperati da file JSON che contengono le informazioni sui libri per ogni categoria.
+- Interfaccia interattiva: implementazione dell'interfaccia utente con React, dove lo stato e le modifiche ai dati sono gestiti in modo dinamico.
