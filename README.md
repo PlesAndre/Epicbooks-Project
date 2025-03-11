@@ -15,7 +15,7 @@ L'approccio iniziale è stato complesso in quanto si è trattato di utilizzare u
 ## Installazione e utilizzo
 Clona il repository:
 
-git clone https://github.com/tuo-username/epicbooks.git
+git clone https://github.com/PlesAndre/Epicbooks-Project.git
 Vai nella cartella del progetto:
 
 Installa le dipendenze:
